@@ -31,5 +31,5 @@ export const api = {
   validate: (data) => request('/validate', { method: 'POST', body: JSON.stringify(data) }),
 
   // Models
-  getModels: () => request('/models'),
+  getModels: (refresh) => request(refresh ? '/models?refresh=true' : '/models'),
 };

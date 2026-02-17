@@ -46,8 +46,8 @@ async function chatCompletion({ model, messages, temperature = 0.7, maxTokens = 
 let modelsCache = null;
 let modelsCacheTime = 0;
 
-async function listModels() {
-  if (modelsCache && Date.now() - modelsCacheTime < 3600000) return modelsCache;
+async function listModels(forceRefresh = false) {
+  if (!forceRefresh && modelsCache && Date.now() - modelsCacheTime < 3600000) return modelsCache;
   const res = await fetch(`${API_BASE}/models`, {
     headers: { 'Authorization': `Bearer ${API_KEY}` },
   });
