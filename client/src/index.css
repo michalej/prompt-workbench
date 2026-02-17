@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: rgba(15, 12, 41, 0.5); }
+  ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.3); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.5); }
+  
+  textarea, input, select {
+    @apply bg-navy-900 border border-navy-700 rounded-lg px-3 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all;
+  }
+  
+  textarea { @apply font-mono text-sm leading-relaxed; }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2 text-sm;
+  }
+  .btn-primary {
+    @apply btn bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/20;
+  }
+  .btn-secondary {
+    @apply btn bg-navy-800 hover:bg-navy-700 text-gray-300 border border-navy-600;
+  }
+  .btn-danger {
+    @apply btn bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30;
+  }
+  .btn-success {
+    @apply btn bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20;
+  }
+  .card {
+    @apply bg-navy-900/80 backdrop-blur-sm border border-navy-700/50 rounded-xl p-5 shadow-xl;
+  }
+  .panel {
+    @apply bg-navy-900 border border-navy-700/50 rounded-xl overflow-hidden;
+  }
+  .badge {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+}
